@@ -31,7 +31,7 @@ Easy as pie:
   </tr>
   <tr>
     <td><i>offset</i></td>
-    <td>File offset. Must be a multiple of <b>mmap.PAGESIZE</b>.</td>
+    <td>File offset. Must be either zero or a multiple of <b>mmap.PAGESIZE</b>.</td>
   </tr>
 </table>
 

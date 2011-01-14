@@ -6,7 +6,7 @@
     "homepage":     "https://github.com/bnoordhuis/node-mmap",
     "engines":      { "node": ">=0.2.0" },
     "modules":      {
-        "index":    "./build/default/mmap"
+        "index":    "./lib/mmap"
     },
     "scripts": {
         "preinstall":   "node-waf configure build",

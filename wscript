@@ -12,4 +12,4 @@ def configure(ctx):
 def build(ctx):
 	t = ctx.new_task_gen('cxx', 'shlib', 'node_addon')
 	t.target = 'mmap'
-	t.source = 'mmap.cc'
+	t.source = './src/mmap_buffer.cc'

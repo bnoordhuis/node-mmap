@@ -2,9 +2,13 @@
 
 mmap(2) bindings for node.js - stop slurping, start mapping.
 
-## Compiling
+## Installing
 
-Easy as pie:
+Through [npm](http://npmjs.org/):
+
+	npm install mmap
+
+Or compile it from source with this one-liner:
 
 	node-waf configure build install
 

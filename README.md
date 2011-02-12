@@ -14,7 +14,7 @@ Or compile it from source with this one-liner:
 
 ## Usage
 
-    buffer = new mmap.Buffer(n_bytes, protection, flags, fd, offset);
+    buffer = mmap.map(n_bytes, protection, flags, fd, offset);
 
 <table>
   <tr>
@@ -39,7 +39,7 @@ Or compile it from source with this one-liner:
   </tr>
 </table>
 
-See http://www.opengroup.org/onlinepubs/000095399/functions/mmap.html for more details.
+See [the man page](http://www.opengroup.org/onlinepubs/000095399/functions/mmap.html) for more details.
 
 ## Examples
 
@@ -48,7 +48,7 @@ Map a file into memory:
     fs = require('fs'), mmap = require('mmap');
     fd = fs.openSync('/path/to/file', 'r');
     size = fs.fstatSync(fd).size;
-    buffer = new mmap.Buffer(size, mmap.PROT_READ, mmap.MAP_SHARED, fd, 0);
+    buffer = mmap.map(size, mmap.PROT_READ, mmap.MAP_SHARED, fd, 0);
     // calculate faux checksum
     var checksum = 0;
     for (var i = 0; i < buffer.length; i++) {

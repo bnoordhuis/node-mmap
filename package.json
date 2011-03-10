@@ -10,7 +10,7 @@
     },
     "scripts": {
         "preinstall":   "node-waf configure build",
-        "preuninstall": "node-waf clean",
+        "preuninstall": "node-waf clean"
     },
     "repository": {
         "type":         "git",

@@ -1,6 +1,6 @@
 {
     "name":         "mmap",
-    "version":      "0.0.2",
+    "version":      "0.0.3",
     "author":       "Ben Noordhuis",
     "description":  "mmap(2) bindings for node.js",
     "homepage":     "https://github.com/bnoordhuis/node-mmap",

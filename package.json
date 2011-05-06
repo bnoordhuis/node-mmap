@@ -5,9 +5,7 @@
     "description":  "mmap(2) bindings for node.js",
     "homepage":     "https://github.com/bnoordhuis/node-mmap",
     "engines":      { "node": ">=0.4.0" },
-    "modules":      {
-        "index":    "./build/default/mmap"
-    },
+    "main": "./build/default/mmap",
     "scripts": {
         "preinstall":   "node-waf configure build",
         "preuninstall": "node-waf clean"

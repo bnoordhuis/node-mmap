@@ -1,5 +1,4 @@
 fs = require('fs');
-sys = require('sys');
 mmap = require('mmap');
 assert = require('assert');
 constants = require('constants');
@@ -7,8 +6,6 @@ constants = require('constants');
 PAGESIZE = mmap.PAGESIZE;
 PROT_READ = mmap.PROT_READ;
 MAP_SHARED = mmap.MAP_SHARED;
-
-_ = function(what) { sys.puts(sys.inspect(what)); };
 
 // open self (this script)
 fd = fs.openSync(process.argv[1], 'r');

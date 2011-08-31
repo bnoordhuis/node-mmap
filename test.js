@@ -5,6 +5,7 @@ constants = require('constants');
 
 PAGESIZE = mmap.PAGESIZE;
 PROT_READ = mmap.PROT_READ;
+PROT_WRITE = mmap.PROT_WRITE;
 MAP_SHARED = mmap.MAP_SHARED;
 
 // open self (this script)
@@ -41,3 +42,10 @@ if (PAGESIZE != 1) {
 		assert.equal(e.errno, constants.EINVAL);
 	}
 }
+
+// object should be fastbuffer-compatible
+ifd = fs.openSync('/dev/zero', 'r');
+size = 1024;
+ibuf = mmap.map(size, PROT_READ, MAP_SHARED, ifd);
+obuf = new Buffer(size);
+obuf.copy(ibuf);

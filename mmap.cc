@@ -12,6 +12,8 @@ namespace {
 using namespace v8;
 using namespace node;
 
+Persistent<String> parent_sym;
+
 void Unmap(char* data, void* hint) {
 	munmap(data, (size_t) hint);
 }
@@ -41,6 +43,9 @@ Handle<Value> Map(const Arguments& args) {
 		Buffer* buffer = Buffer::New(
 				data, size, Unmap, (void *) size);
 
+		// simulate fast buffer
+		buffer->handle_->Set(parent_sym, buffer->handle_);
+
 		return buffer->handle_;
 	}
 }
@@ -49,6 +54,8 @@ extern "C" void init(Handle<Object> target) {
 	HandleScope scope;
 
 	const PropertyAttribute attribs = (PropertyAttribute) (ReadOnly | DontDelete);
+
+	parent_sym = Persistent<String>::New(String::NewSymbol("parent"));
 
 	target->Set(String::New("PROT_READ"), Integer::New(PROT_READ), attribs);
 	target->Set(String::New("PROT_WRITE"), Integer::New(PROT_WRITE), attribs);

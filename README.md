@@ -57,6 +57,11 @@ Map a file into memory:
 
 The file is automatically unmapped when the buffer object is garbage collected.
 
-## Limitations
+## Bugs and limitations
 
-* Specifying the memory address is not implemented. I couldn't think of a reason why you would want to do that from JavaScript. Convince me otherwise. :-)
+* Specifying the memory address is not implemented. I couldn't think of a reason
+  why you would want to do that from JavaScript. Convince me otherwise. :-)
+
+* Reading from and writing to memory-mapped files is a potentially blocking
+  operation. *Do not* use this module in performance critical code. Better yet,
+  don't use this module at all.

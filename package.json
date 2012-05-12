@@ -1,11 +1,11 @@
 {
     "name":         "mmap",
-    "version":      "0.0.3",
+    "version":      "0.0.4",
     "author":       "Ben Noordhuis",
     "description":  "mmap(2) bindings for node.js",
     "homepage":     "https://github.com/bnoordhuis/node-mmap",
     "engines":      { "node": ">=0.4.0" },
-    "main": "./build/default/mmap",
+    "main":         "./build/Release/mmap",
     "scripts": {
         "preinstall":   "node-waf configure build",
         "preuninstall": "node-waf clean"

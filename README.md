@@ -2,6 +2,8 @@
 
 mmap(2) bindings for node.js - stop slurping, start mapping.
 
+** This module is no longer maintained. **
+
 ## Installing
 
 Through [npm](http://npmjs.org/):
